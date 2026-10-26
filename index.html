@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>虚拟形象</title>
+<style>
+  body{margin:0;min-height:100vh;display:flex;flex-direction:column;
+       align-items:center;justify-content:center;
+       background:radial-gradient(circle at 50% 30%,#1b2a4a,#070b14 70%);
+       font-family:system-ui,sans-serif;color:#cfe3ff;}
+  svg{width:min(80vw,340px);height:auto;filter:drop-shadow(0 0 24px #3aa0ff88);}
+  .name{margin-top:18px;font-size:18px;letter-spacing:4px;opacity:.9;}
+  .tag{margin-top:6px;font-size:12px;opacity:.5;}
+</style>
+</head>
+<body>
+<svg viewBox="0 0 300 340" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="body" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#5fd0ff"/>
+      <stop offset="1" stop-color="#2b6cff"/>
+    </linearGradient>
+    <radialGradient id="glow" cx="50%" cy="50%" r="50%">
+      <stop offset="0" stop-color="#7fe3ff" stop-opacity=".9"/>
+      <stop offset="1" stop-color="#7fe3ff" stop-opacity="0"/>
+    </radialGradient>
+  </defs>
+
+  <!-- 光环 -->
+  <circle cx="150" cy="150" r="120" fill="url(#glow)" opacity=".35"/>
+
+  <!-- 身体 -->
+  <path d="M90 300 Q90 210 150 210 Q210 210 210 300 Z" fill="url(#body)" opacity=".9"/>
+  <!-- 胸口核心 -->
+  <circle cx="150" cy="255" r="14" fill="#eafaff"/>
+  <circle cx="150" cy="255" r="22" fill="none" stroke="#9fe8ff" stroke-width="2" opacity=".6"/>
+
+  <!-- 头部 -->
+  <rect x="95" y="85" width="110" height="100" rx="42" fill="#0e1a2e" stroke="#5fd0ff" stroke-width="3"/>
+  <!-- 面屏 -->
+  <rect x="112" y="115" width="76" height="42" rx="21" fill="#07101f"/>
+  <!-- 眼睛 -->
+  <circle cx="134" cy="136" r="7" fill="#7fe3ff">
+    <animate attributeName="r" values="7;3;7" dur="4s" repeatCount="indefinite"/>
+  </circle>
+  <circle cx="166" cy="136" r="7" fill="#7fe3ff">
+    <animate attributeName="r" values="7;3;7" dur="4s" repeatCount="indefinite"/>
+  </circle>
+  <!-- 天线 -->
+  <line x1="150" y1="85" x2="150" y2="58" stroke="#5fd0ff" stroke-width="3"/>
+  <circle cx="150" cy="52" r="7" fill="#7fe3ff">
+    <animate attributeName="opacity" values="1;.3;1" dur="2s" repeatCount="indefinite"/>
+  </circle>
+  <!-- 耳朵 -->
+  <rect x="86" y="125" width="10" height="26" rx="5" fill="#2b6cff"/>
+  <rect x="204" y="125" width="10" height="26" rx="5" fill="#2b6cff"/>
+</svg>
+<div class="name">A I  助 手</div>
+<div class="tag">虚拟形象 · 可自定义</div>
+</body>
+</html>
